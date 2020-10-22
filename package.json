@@ -1,6 +1,7 @@
 {
     "name": "vscode-zelus",
     "displayName": "vscode-zelus",
+    "publisher": "ismailbennani",
     "description": "Language support for Zélus https://zelus.di.ens.fr",
     "version": "0.0.1",
     "engines": {
@@ -9,17 +10,26 @@
     "categories": [
         "Programming Languages"
     ],
+    "keywords":[
+        "zelus", "zls", "zli", 
+        "language", "syntax", "highlighting"
+    ],
     "contributes": {
-        "languages": [{
-            "id": "zelus",
-            "aliases": ["zelus", "zelus"],
-            "extensions": [".zls",".zli"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "zelus",
-            "scopeName": "source.zelus",
-            "path": "./syntaxes/zelus.tmLanguage.json"
-        }]
-    }
+        "languages": [
+            {
+                "id": "zelus",
+                "aliases": [ "Zélus", "Zelus", "zls" ],
+                "extensions": [ ".zls", ".zli" ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "zelus",
+                "scopeName": "source.zelus",
+                "path": "./syntaxes/zelus.tmLanguage.json"
+            }
+        ]
+    },
+    "dependencies": {}
 }
