@@ -3,6 +3,7 @@
     "displayName": "vscode-zelus",
     "publisher": "ismailbennani",
     "description": "Language support for Zélus https://zelus.di.ens.fr",
+    "repository": "https://github.com/ismailbennani/vscode-zelus",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.50.0"
