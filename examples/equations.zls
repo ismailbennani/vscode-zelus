@@ -1,0 +1,131 @@
+let good () = z where
+
+    (* Simple equation: automaton *)
+    automaton
+    | S ->
+        do
+            x = 42
+        done
+    | S -> do done
+    end
+
+    and
+
+    automaton
+    | S ->
+        do
+            x = 42
+        until
+            up(5) then S
+    end
+
+    and
+
+    automaton
+    | S ->
+        do
+            x = 42
+        done
+    init S
+
+    and
+
+    (* Simple equation: match *)
+    match x with
+    | y ->
+        do
+            x = 42
+        done
+    end
+
+    and
+
+    (* Simple equation: if *)
+    if true then do
+      x = 42
+    done else do
+      x = 42
+    done
+
+    and
+
+    (* Simple equation: present *)
+    present x ->
+    do
+        x = 42
+    done else do
+        x = 42
+    done
+
+    and
+
+    (* Simple equation: reset *)
+    reset
+        x = 42
+    every up(42)
+
+    and
+
+    (* Simple equation: let, local, do *)
+    let x = 42 in
+    local x in
+    do
+        x = pre 42
+    done
+
+    and
+
+    (* Simple equation: forall *)
+    forall x in 3 .. 4
+    do
+         x = 42
+    initialize
+        last x = 42
+    done
+
+    and
+
+    (* Equation: assignment *)
+    x =
+        42
+
+    and
+
+    (* Equation: period *)
+    period x =
+        (42)
+
+    and
+
+    (* Equation: der *)
+    der x =
+        42
+
+    and
+
+    der x = 42
+        init 0
+        reset x ->
+        42
+
+    and
+
+    (* Equation: next *)
+    next x =
+        42
+
+    and
+
+    (* Equation: init *)
+    init x =
+        42
+
+    and
+
+    (* Equation: emit *)
+    emit x =
+        42
+
+    and
+
+    x = 42 before x = 42

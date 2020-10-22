@@ -1,0 +1,108 @@
+let good () =
+
+    (* Simple expression: constructor *)
+    Const;
+
+    (* Simple expression: external identifier *)
+    Const.x;
+
+    (* Simple expression: atomic constant *)
+    "string" + "string";
+    'c' + 'h' + 'a' + 'r';
+    '\012'; "\e\s\c\a\p\e\d chars";
+    1; 0x00; 0o33; 0b10;
+    1.; 1.0; 1.0e4; 1.0e-4;
+    true; false;
+
+    (* Simple expression: unit, nil *)
+    (); [];
+
+    (* Simple expression: sequence *)
+    ((); ());
+
+    (* Simple expression: explicit type *)
+    (() : unit);
+
+    (* Simple expression: list *)
+    [(); ()];
+
+    (* Simple expression: tuple *)
+    ((), ());
+
+    (* Simple expression: last *)
+    last x;
+
+    (* Simple expression: record *)
+    { x = 42 };
+
+    (* Infix expression *)
+    x + x;
+
+    (* Expression: init *)
+    init;
+
+    (* Expression: automaton *)
+    automaton
+    | S ->
+        do
+            42
+        until x then S
+    | S ->
+        do
+            42
+        done;
+
+    (* Expression: match *)
+    match x with
+    | (y, _) ->
+        42
+    end;
+
+    (* Expression: present *)
+    present x ->
+      42
+    else 42;
+
+    (* Expression: reset *)
+    reset
+        42
+    every x;
+
+    (* Expression: if then, else *)
+    if x then
+        42
+    else
+        42;
+
+    (* Expression: let *)
+    let x = 42 in x;
+
+    (* Expression: application *)
+    f g h (x + 42); f(x);
+
+    (* Expression: prefix *)
+    not x; - 5;
+
+    (* Expression: record update *)
+    { x with x = 42 };
+
+    (* Expression: slice *)
+    x{1..2};
+
+    (* Expression: concat *)
+    { x | y };
+
+    (* Expression: access *)
+    x.(42);
+
+    (* Expression: record access *)
+    x.y;
+
+    (* Expression: period *)
+    period(0.1);
+
+    (* Expression: do in *)
+    local x in
+    do
+        x = 5
+    in x;
